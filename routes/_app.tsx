@@ -346,8 +346,6 @@ export default define.page(function App({ Component }) {
 
           .testimonial {
             max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
           }
 
           .testimonial blockquote {
@@ -371,7 +369,6 @@ export default define.page(function App({ Component }) {
           }
 
           .cta-section {
-            text-align: center;
             padding: 8rem 0;
           }
 
@@ -386,17 +383,13 @@ export default define.page(function App({ Component }) {
             color: var(--muted);
             margin-bottom: 2.5rem;
             max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
           }
 
           .cta-form {
             display: flex;
             gap: 1rem;
             max-width: 480px;
-            margin: 0 auto;
             flex-wrap: wrap;
-            justify-content: center;
           }
 
           .cta-input {
@@ -439,7 +432,6 @@ export default define.page(function App({ Component }) {
           footer {
             border-top: 1px solid var(--border);
             padding: 3rem 0;
-            text-align: center;
           }
 
           footer p {
@@ -464,10 +456,6 @@ export default define.page(function App({ Component }) {
             gap: 3rem;
           }
 
-          .why-item {
-            text-align: center;
-          }
-
           .why-icon {
             width: 64px;
             height: 64px;
@@ -475,7 +463,7 @@ export default define.page(function App({ Component }) {
             align-items: center;
             justify-content: center;
             border: 1px solid var(--border);
-            margin: 0 auto 1.5rem;
+            margin-bottom: 1.5rem;
             color: var(--accent);
           }
 
@@ -585,6 +573,42 @@ export default define.page(function App({ Component }) {
 
           .usecase-card .who-list {
             margin-top: 1.5rem;
+          }
+
+          /* Stats Section */
+          .stats-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+          }
+
+          .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+          }
+
+          .stat-item {
+            padding: 1.5rem;
+          }
+
+          .stat-number {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-family: 'Instrument Serif', serif;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+          }
+
+          .stat-label {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.4;
+          }
+
+          @media (max-width: 900px) {
+            .stats-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
           }
 
           @media (max-width: 900px) {

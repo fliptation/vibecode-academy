@@ -138,6 +138,30 @@ export default define.page(function Home() {
           </div>
         </section>
 
+        {/* Stats Section */}
+        <section class="stats-section">
+          <div class="container">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">55%</div>
+                <div class="stat-label">Faster task completion with AI</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">84%</div>
+                <div class="stat-label">Developers using AI tools in 2025</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3.5x</div>
+                <div class="stat-label">Average ROI on AI investments</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">90%</div>
+                <div class="stat-label">Feel more fulfilled at work</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Section */}
         <section class="section">
           <div class="container">
