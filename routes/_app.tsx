@@ -254,13 +254,21 @@ export default define.page(function App({ Component }) {
 
           /* Scroll-driven animations */
           @keyframes reveal {
-            from {
+            0% {
               opacity: 0;
               transform: translateY(32px);
             }
-            to {
+            15% {
               opacity: 1;
               transform: translateY(0);
+            }
+            85% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            100% {
+              opacity: 0;
+              transform: translateY(-32px);
             }
           }
 
@@ -278,7 +286,7 @@ export default define.page(function App({ Component }) {
           .cta-section .hero__cta {
             animation: reveal linear both;
             animation-timeline: view();
-            animation-range: entry 0% entry 100%;
+            animation-range: cover 0% cover 100%;
           }
 
           .typed-text {
@@ -359,6 +367,7 @@ export default define.page(function App({ Component }) {
           }
 
           .format-card {
+            background: var(--bg);
             border: 1px solid var(--border);
             padding: 2.5rem;
             position: relative;
@@ -542,6 +551,10 @@ export default define.page(function App({ Component }) {
             color: var(--accent);
           }
 
+          .why-item {
+            background: var(--bg);
+          }
+
           .why-item h3 {
             font-size: 1.25rem;
             font-weight: 500;
@@ -562,6 +575,7 @@ export default define.page(function App({ Component }) {
           }
 
           .who-card {
+            background: var(--bg);
             border: 1px solid var(--border);
             padding: 2rem;
             transition: border-color 0.3s;
@@ -613,6 +627,7 @@ export default define.page(function App({ Component }) {
           }
 
           .usecase-card {
+            background: var(--bg);
             border: 1px solid var(--border);
             padding: 2.5rem;
             transition: border-color 0.3s;
@@ -747,6 +762,7 @@ export default define.page(function App({ Component }) {
           }
 
           .stat-item {
+            background: var(--bg);
             padding: 1.5rem;
           }
 
