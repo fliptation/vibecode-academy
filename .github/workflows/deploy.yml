@@ -29,8 +29,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "vibecode-fresh"
-          entrypoint: "main.ts"
-          root: "."
+          project: "vibecode"
+          entrypoint: "_fresh/server.js"
+          root: "_fresh"
           
           
