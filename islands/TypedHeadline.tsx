@@ -2,7 +2,7 @@ import { useEffect, useState } from "preact/hooks";
 
 const phrases = [
   "Learn to build with AI",
-  "Ship faster. Imagine less.",
+  "Ship fasterer",
   "Build real products",
   "Code with vibes",
 ];

@@ -59,8 +59,9 @@ export default define.page(function App({ Component }) {
           }
 
           header {
+            position: relative;
+            z-index: 1;
             padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
           }
 
           .header-inner {
@@ -115,11 +116,11 @@ export default define.page(function App({ Component }) {
           }
 
           .meteor-canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             pointer-events: none;
             z-index: 0;
           }
@@ -128,7 +129,7 @@ export default define.page(function App({ Component }) {
             position: relative;
             z-index: 1;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 7fr 5fr;
             gap: 4rem;
             align-items: center;
           }
@@ -137,9 +138,41 @@ export default define.page(function App({ Component }) {
             max-width: 600px;
           }
 
-          .hero__demo {
+          .hero__testimonial {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            background: rgba(255, 255, 255, 0.02);
+            animation: fadeIn 0.6s ease-out 0.4s both;
+          }
+
+          .hero__testimonial-quote {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            color: var(--fg);
+          }
+
+          .hero__testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+          }
+
+          .hero__testimonial-author strong {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--fg);
+          }
+
+          .hero__testimonial-author span {
+            font-size: 0.875rem;
+            color: var(--muted);
           }
 
           .hero__tag {
@@ -217,6 +250,35 @@ export default define.page(function App({ Component }) {
               opacity: 1;
               transform: translateY(0);
             }
+          }
+
+          /* Scroll-driven animations */
+          @keyframes reveal {
+            from {
+              opacity: 0;
+              transform: translateY(32px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .section-label,
+          .section-title,
+          .stat-item,
+          .why-item,
+          .who-card,
+          .usecase-card,
+          .learn-item,
+          .format-card,
+          .terminal-window,
+          .cta-section h2,
+          .cta-section p,
+          .cta-section .hero__cta {
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 100%;
           }
 
           .typed-text {
@@ -589,12 +651,16 @@ export default define.page(function App({ Component }) {
           }
 
           /* Terminal Demo */
+          .terminal-section {
+            padding: 5rem 0;
+          }
+
           .terminal-window {
             background: #1a1a1a;
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
-            width: 520px;
+            max-width: 700px;
             height: 400px;
           }
 
@@ -725,8 +791,8 @@ export default define.page(function App({ Component }) {
               gap: 3rem;
             }
 
-            .hero__demo {
-              justify-content: flex-start;
+            .hero__testimonial {
+              max-width: 540px;
             }
 
             .terminal-window {

@@ -104,7 +104,7 @@ export default function TerminalDemo() {
         </div>
         <div class="terminal-title">claude — vibecode</div>
       </div>
-      <div class="terminal-body">
+      <div class="terminal-body" ref={bodyRef}>
         {terminalScript.slice(0, visibleLines).map((line, i) => (
           <div key={i} class={`terminal-line ${getLineClass(line.type)}`}>
             {line.text}

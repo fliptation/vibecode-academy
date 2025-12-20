@@ -118,6 +118,7 @@ function RefreshIcon() {
 export default define.page(function Home() {
   return (
     <>
+      <MeteorShower />
       <header>
         <div class="container header-inner">
           <div class="logo">vibe<span>code</span></div>
@@ -127,7 +128,6 @@ export default define.page(function Home() {
 
       <main>
         <section class="hero">
-          <MeteorShower />
           <div class="container hero__grid">
             <div class="hero__text">
               <div class="hero__tag">Now accepting clients</div>
@@ -138,9 +138,24 @@ export default define.page(function Home() {
                 <ArrowIcon />
               </a>
             </div>
-            <div class="hero__demo">
-              <TerminalDemo />
+            <div class="hero__testimonial">
+              <blockquote class="hero__testimonial-quote">
+                "In two hours, I went from skeptical to shipping a working prototype. This is the missing manual for building with AI."
+              </blockquote>
+              <div class="hero__testimonial-author">
+                <strong>Michael Borter</strong>
+                <span>CEO, Cashare</span>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Terminal Demo */}
+        <section class="terminal-section">
+          <div class="container">
+            <div class="section-label">See It In Action</div>
+            <h2 class="section-title">This is vibecoding</h2>
+            <TerminalDemo />
           </div>
         </section>
 
@@ -349,23 +364,11 @@ export default define.page(function Home() {
           </div>
         </section>
 
-        <section class="section testimonial-section">
-          <div class="container">
-            <div class="testimonial">
-              <blockquote>"In two hours, I went from skeptical to shipping a working prototype. This is the missing manual for building with AI."</blockquote>
-              <div class="testimonial-author">
-                <strong>Michael Borter</strong><br/>
-                <span>CEO, Cashare</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="contact" class="section cta-section">
           <div class="container">
             <h2>Ready to vibecode?</h2>
             <p>Drop me a line and let's schedule your session.</p>
-            <a href="mailto:vedran@unchained.shop?subject=Vibecode%20Session" class="hero-cta">
+            <a href="mailto:vedran@unchained.shop?subject=Vibecode%20Session" class="hero__cta">
               Get in Touch
               <ArrowIcon />
             </a>

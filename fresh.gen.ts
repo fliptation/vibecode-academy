@@ -5,10 +5,13 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_name_ from "./routes/api/[name].tsx";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
+import * as $impressum from "./routes/impressum.tsx";
+import * as $privacy from "./routes/privacy.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $MeteorShower from "./islands/MeteorShower.tsx";
+import * as $TypedHeadline from "./islands/TypedHeadline.tsx";
+import * as $TerminalDemo from "./islands/TerminalDemo.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -16,12 +19,15 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/api/[name].tsx": $api_name_,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
+    "./routes/impressum.tsx": $impressum,
+    "./routes/privacy.tsx": $privacy,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
+    "./islands/MeteorShower.tsx": $MeteorShower,
+    "./islands/TypedHeadline.tsx": $TypedHeadline,
+    "./islands/TerminalDemo.tsx": $TerminalDemo,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
