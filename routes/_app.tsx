@@ -99,6 +99,7 @@ export default define.page(function App({ Component }) {
           .hero {
             padding: 8rem 0;
             position: relative;
+            overflow: hidden;
           }
 
           .hero::before {
@@ -111,6 +112,16 @@ export default define.page(function App({ Component }) {
             height: 600px;
             background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
             pointer-events: none;
+          }
+
+          .meteor-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
           }
 
           .hero-content {
@@ -531,7 +542,56 @@ export default define.page(function App({ Component }) {
             flex-shrink: 0;
           }
 
+          /* Use Cases Section */
+          .usecase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
+
+          .usecase-card {
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: border-color 0.3s;
+          }
+
+          .usecase-card:hover {
+            border-color: var(--accent);
+          }
+
+          .usecase-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+          }
+
+          .usecase-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+
+          .usecase-card > p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+          }
+
+          .usecase-card .who-list {
+            margin-top: 1.5rem;
+          }
+
           @media (max-width: 900px) {
+            .usecase-grid {
+              grid-template-columns: 1fr;
+            }
+
             .why-grid {
               grid-template-columns: 1fr;
               gap: 2rem;

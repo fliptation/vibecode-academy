@@ -1,5 +1,6 @@
 import { define } from "../utils.ts";
 import TypedHeadline from "../islands/TypedHeadline.tsx";
+import MeteorShower from "../islands/MeteorShower.tsx";
 
 // SVG Icons as components
 function ArrowIcon() {
@@ -75,6 +76,44 @@ function CheckIcon() {
   );
 }
 
+function BarChartIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="20" x2="12" y2="10"/>
+      <line x1="18" y1="20" x2="18" y2="4"/>
+      <line x1="6" y1="20" x2="6" y2="16"/>
+    </svg>
+  );
+}
+
+function CodeIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  );
+}
+
+function RefreshIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </svg>
+  );
+}
+
 export default define.page(function Home() {
   return (
     <>
@@ -87,6 +126,7 @@ export default define.page(function Home() {
 
       <main>
         <section class="hero">
+          <MeteorShower />
           <div class="container hero-content">
             <div class="hero-tag">Now accepting clients</div>
             <h1><TypedHeadline /></h1>
@@ -154,6 +194,52 @@ export default define.page(function Home() {
                   <li><CheckIcon /> Shared playbook for the team</li>
                   <li><CheckIcon /> Consistent AI-assisted workflow</li>
                   <li><CheckIcon /> Measurable productivity gains</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases Section */}
+        <section class="section">
+          <div class="container">
+            <div class="section-label">Use Cases</div>
+            <h2 class="section-title">What you can build with AI</h2>
+            <div class="usecase-grid">
+              <div class="usecase-card">
+                <div class="usecase-icon"><BarChartIcon /></div>
+                <h3>Instant Insights for Leaders</h3>
+                <p>CEOs need numbers. Revenue trends, user metrics, platform health — answers that used to require a data team and weeks of waiting.</p>
+                <p>With AI, you can query your own systems in plain language. Build dashboards in hours. Get the insights you need to make decisions, not next quarter — now.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Query databases without SQL</li>
+                  <li><CheckIcon /> Build custom dashboards fast</li>
+                  <li><CheckIcon /> Real-time business intelligence</li>
+                  <li><CheckIcon /> No more waiting on reports</li>
+                </ul>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon"><CodeIcon /></div>
+                <h3>Supercharge Your Codebase</h3>
+                <p>Legacy code. Technical debt. That feature nobody wants to touch. AI doesn't judge — it just helps.</p>
+                <p>Review existing code for bugs and security issues. Refactor for performance. Find patterns you didn't know existed. Let AI be the second pair of eyes your team needs.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Automated code review</li>
+                  <li><CheckIcon /> Refactor with confidence</li>
+                  <li><CheckIcon /> Find hidden bugs & vulnerabilities</li>
+                  <li><CheckIcon /> Document legacy systems</li>
+                </ul>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon"><RefreshIcon /></div>
+                <h3>Modernize Your Stack</h3>
+                <p>Still running on that 2015 framework? Migrating feels impossible. But AI changes the equation.</p>
+                <p>Upgrade your legacy tech stack to modern, AI-ready architecture. Migrate frameworks, update dependencies, and transform monoliths into modern systems — with AI doing the heavy lifting.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Framework migrations made easy</li>
+                  <li><CheckIcon /> Dependency updates at scale</li>
+                  <li><CheckIcon /> API modernization</li>
+                  <li><CheckIcon /> AI-ready architecture</li>
                 </ul>
               </div>
             </div>

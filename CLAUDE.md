@@ -51,6 +51,11 @@ This is the marketing site and resources for Vibecode Academy — a coaching ser
 - [ ] Consider adding case studies page later
 - [ ] Maybe a /resources page with free content to build trust
 
+## Code Style
+
+- **No inline styles** — all styling in external CSS files
+- **BEM methodology** for CSS class naming (Block__Element--Modifier)
+
 ## Notes for Claude
 
 When working on this project:
