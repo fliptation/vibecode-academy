@@ -115,6 +115,102 @@
         .hero-content {
             position: relative;
             z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            /* Left column text content */
+        }
+
+        .hero-demo {
+            position: relative;
+        }
+
+        .hero-demo__label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .hero-demo__window {
+            background: #111;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-demo__titlebar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: #1a1a1a;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-demo__dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .hero-demo__dot--red { background: #ff5f56; }
+        .hero-demo__dot--yellow { background: #ffbd2e; }
+        .hero-demo__dot--green { background: #27ca40; }
+
+        .hero-demo__content {
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            line-height: 1.8;
+            min-height: 280px;
+        }
+
+        .hero-demo__line {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-demo__prompt {
+            color: var(--accent);
+            user-select: none;
+        }
+
+        .hero-demo__text {
+            color: var(--muted);
+        }
+
+        .hero-demo__text--typing {
+            color: var(--fg);
+            border-right: 2px solid var(--accent);
+            animation: blink 1s step-end infinite;
+        }
+
+        .hero-demo__output {
+            color: var(--muted);
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-demo__success {
+            color: #27ca40;
+        }
+
+        .hero-demo__output--spaced {
+            margin-top: 1rem;
+        }
+
+        .hero-demo__line--spaced {
+            margin-top: 1rem;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
         }
 
         .hero-tag {
@@ -435,6 +531,17 @@
         }
 
         /* Mobile adjustments */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-demo {
+                order: -1;
+            }
+        }
+
         @media (max-width: 640px) {
             .hero {
                 padding: 5rem 0;
@@ -451,6 +558,11 @@
             .formats-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-demo__content {
+                min-height: 220px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -465,15 +577,48 @@
     <main>
         <section class="hero">
             <div class="container hero-content">
-                <div class="hero-tag">Now accepting clients</div>
-                <h1>Learn to build<br>with <em>AI</em></h1>
-                <p class="hero-subtitle">Hands-on coaching for founders and teams who want to ship faster with Claude Code. No fluff. Real projects. Immediate results.</p>
-                <button class="hero-cta">
-                    Get Started
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
+                <div class="hero-text">
+                    <div class="hero-tag">Now accepting clients</div>
+                    <h1>Learn to build<br>with <em>AI</em></h1>
+                    <p class="hero-subtitle">Hands-on coaching for founders and teams who want to ship faster with Claude Code. No fluff. Real projects. Immediate results.</p>
+                    <button class="hero-cta">
+                        Get Started
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hero-demo">
+                    <div class="hero-demo__label">See It In Action</div>
+                    <div class="hero-demo__window">
+                        <div class="hero-demo__titlebar">
+                            <span class="hero-demo__dot hero-demo__dot--red"></span>
+                            <span class="hero-demo__dot hero-demo__dot--yellow"></span>
+                            <span class="hero-demo__dot hero-demo__dot--green"></span>
+                        </div>
+                        <div class="hero-demo__content">
+                            <div class="hero-demo__line">
+                                <span class="hero-demo__prompt">$</span>
+                                <span class="hero-demo__text">claude</span>
+                            </div>
+                            <div class="hero-demo__output">
+                                <div class="hero-demo__text">› Build me a landing page for my coaching business</div>
+                            </div>
+                            <div class="hero-demo__output hero-demo__output--spaced">
+                                <div class="hero-demo__text">Creating index.html...</div>
+                                <div class="hero-demo__text">Adding responsive styles...</div>
+                                <div class="hero-demo__text">Setting up contact form...</div>
+                            </div>
+                            <div class="hero-demo__output hero-demo__output--spaced">
+                                <div class="hero-demo__success">✓ Done. Your site is ready.</div>
+                            </div>
+                            <div class="hero-demo__line hero-demo__line--spaced">
+                                <span class="hero-demo__prompt">$</span>
+                                <span class="hero-demo__text hero-demo__text--typing">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

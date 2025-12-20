@@ -124,12 +124,25 @@ export default define.page(function App({ Component }) {
             z-index: 0;
           }
 
-          .hero-content {
+          .hero__grid {
             position: relative;
             z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
           }
 
-          .hero-tag {
+          .hero__text {
+            max-width: 600px;
+          }
+
+          .hero__demo {
+            display: flex;
+            justify-content: flex-end;
+          }
+
+          .hero__tag {
             display: inline-block;
             padding: 0.5rem 1rem;
             background: var(--accent-glow);
@@ -142,9 +155,9 @@ export default define.page(function App({ Component }) {
             animation: fadeIn 0.6s ease-out;
           }
 
-          .hero h1 {
+          .hero__text h1 {
             font-family: 'Instrument Serif', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.02em;
@@ -152,12 +165,12 @@ export default define.page(function App({ Component }) {
             animation: fadeIn 0.6s ease-out 0.1s both;
           }
 
-          .hero h1 em {
+          .hero__text h1 em {
             font-style: italic;
             color: var(--accent);
           }
 
-          .hero-subtitle {
+          .hero__subtitle {
             font-size: 1.125rem;
             color: var(--muted);
             max-width: 540px;
@@ -165,7 +178,7 @@ export default define.page(function App({ Component }) {
             animation: fadeIn 0.6s ease-out 0.2s both;
           }
 
-          .hero-cta {
+          .hero__cta {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
@@ -182,16 +195,16 @@ export default define.page(function App({ Component }) {
             text-decoration: none;
           }
 
-          .hero-cta:hover {
+          .hero__cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(34, 211, 238, 0.3);
           }
 
-          .hero-cta svg {
+          .hero__cta svg {
             transition: transform 0.2s;
           }
 
-          .hero-cta:hover svg {
+          .hero__cta:hover svg {
             transform: translateX(4px);
           }
 
@@ -575,6 +588,86 @@ export default define.page(function App({ Component }) {
             margin-top: 1.5rem;
           }
 
+          /* Terminal Demo */
+          .terminal-window {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 520px;
+            height: 400px;
+          }
+
+          .terminal-header {
+            background: #2a2a2a;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+
+          .terminal-buttons {
+            display: flex;
+            gap: 8px;
+          }
+
+          .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+          }
+
+          .terminal-btn-red { background: #ff5f56; }
+          .terminal-btn-yellow { background: #ffbd2e; }
+          .terminal-btn-green { background: #27ca40; }
+
+          .terminal-title {
+            font-size: 0.75rem;
+            color: var(--muted);
+          }
+
+          .terminal-body {
+            padding: 1.5rem;
+            height: calc(100% - 44px);
+            overflow-y: auto;
+            font-size: 0.875rem;
+            line-height: 1.6;
+          }
+
+          .terminal-line {
+            white-space: pre;
+            min-height: 1.4em;
+          }
+
+          .terminal-prompt {
+            color: #22d3ee;
+          }
+
+          .terminal-command {
+            color: #fafafa;
+          }
+
+          .terminal-action {
+            color: #a78bfa;
+          }
+
+          .terminal-code {
+            color: #6b7280;
+          }
+
+          .terminal-success {
+            color: #4ade80;
+          }
+
+          .terminal-output {
+            color: #fbbf24;
+          }
+
+          .terminal-cursor {
+            color: var(--accent);
+            animation: blink 1s step-end infinite;
+          }
+
           /* Stats Section */
           .stats-section {
             padding: 5rem 0;
@@ -623,6 +716,22 @@ export default define.page(function App({ Component }) {
 
             .who-grid {
               grid-template-columns: 1fr;
+            }
+          }
+
+          @media (max-width: 1024px) {
+            .hero__grid {
+              grid-template-columns: 1fr;
+              gap: 3rem;
+            }
+
+            .hero__demo {
+              justify-content: flex-start;
+            }
+
+            .terminal-window {
+              width: 100%;
+              max-width: 520px;
             }
           }
 
