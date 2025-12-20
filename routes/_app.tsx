@@ -195,6 +195,21 @@ export default define.page(function App({ Component }) {
             }
           }
 
+          .typed-text {
+            color: var(--accent);
+          }
+
+          .cursor {
+            color: var(--accent);
+            animation: blink 1s step-end infinite;
+            font-weight: 300;
+          }
+
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+
           .section {
             padding: 6rem 0;
             border-top: 1px solid var(--border);
@@ -431,6 +446,102 @@ export default define.page(function App({ Component }) {
             color: var(--accent);
           }
 
+          /* Why Section */
+          .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+          }
+
+          .why-item {
+            text-align: center;
+          }
+
+          .why-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            margin: 0 auto 1.5rem;
+            color: var(--accent);
+          }
+
+          .why-item h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+          }
+
+          .why-item p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.7;
+          }
+
+          /* Who Section */
+          .who-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
+
+          .who-card {
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: border-color 0.3s;
+          }
+
+          .who-card:hover {
+            border-color: var(--accent);
+          }
+
+          .who-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--accent);
+          }
+
+          .who-card > p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+          }
+
+          .who-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .who-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--border);
+          }
+
+          .who-list li svg {
+            color: var(--accent);
+            flex-shrink: 0;
+          }
+
+          @media (max-width: 900px) {
+            .why-grid {
+              grid-template-columns: 1fr;
+              gap: 2rem;
+            }
+
+            .who-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+
           @media (max-width: 640px) {
             .hero {
               padding: 5rem 0;
@@ -447,6 +558,38 @@ export default define.page(function App({ Component }) {
             .formats-grid {
               grid-template-columns: 1fr;
             }
+          }
+
+          /* Legal Pages */
+          .legal-content {
+            max-width: 700px;
+          }
+
+          .legal-section {
+            margin-bottom: 2.5rem;
+          }
+
+          .legal-section h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+          }
+
+          .legal-section p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.8;
+          }
+
+          .legal-section a {
+            color: var(--fg);
+            text-decoration: none;
+            transition: color 0.2s;
+          }
+
+          .legal-section a:hover {
+            color: var(--accent);
           }
         `}} />
       </head>

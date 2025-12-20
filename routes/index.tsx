@@ -1,4 +1,5 @@
 import { define } from "../utils.ts";
+import TypedHeadline from "../islands/TypedHeadline.tsx";
 
 // SVG Icons as components
 function ArrowIcon() {
@@ -39,6 +40,41 @@ function LayersIcon() {
   );
 }
 
+function ZapIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </svg>
+  );
+}
+
+function TargetIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="6"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+  );
+}
+
+function TrendingUpIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+      <polyline points="17 6 23 6 23 12"/>
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  );
+}
+
 export default define.page(function Home() {
   return (
     <>
@@ -53,7 +89,7 @@ export default define.page(function Home() {
         <section class="hero">
           <div class="container hero-content">
             <div class="hero-tag">Now accepting clients</div>
-            <h1>Learn to build<br/>with <em>AI</em></h1>
+            <h1><TypedHeadline /></h1>
             <p class="hero-subtitle">Hands-on coaching for founders and teams who want to ship faster with Claude Code. No fluff. Real projects. Immediate results.</p>
             <a href="#contact" class="hero-cta">
               Get Started
@@ -62,6 +98,69 @@ export default define.page(function Home() {
           </div>
         </section>
 
+        {/* Why Section */}
+        <section class="section">
+          <div class="container">
+            <div class="section-label">The Problem</div>
+            <h2 class="section-title">AI is changing everything. Are you keeping up?</h2>
+            <div class="why-grid">
+              <div class="why-item">
+                <div class="why-icon"><ZapIcon /></div>
+                <h3>Speed is the new moat</h3>
+                <p>Teams using AI-assisted development are shipping 10x faster. Every week you wait, competitors pull ahead.</p>
+              </div>
+              <div class="why-item">
+                <div class="why-icon"><TargetIcon /></div>
+                <h3>Tools alone aren't enough</h3>
+                <p>You've tried Copilot, ChatGPT, maybe even Claude. But without the right workflow, you're leaving 80% of the value on the table.</p>
+              </div>
+              <div class="why-item">
+                <div class="why-icon"><TrendingUpIcon /></div>
+                <h3>The gap is widening</h3>
+                <p>Some founders are building entire products in a weekend. Others are still debugging boilerplate. Which one are you?</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Section */}
+        <section class="section">
+          <div class="container">
+            <div class="section-label">Who This Is For</div>
+            <h2 class="section-title">Built for builders who want results</h2>
+            <div class="who-grid">
+              <div class="who-card">
+                <h3>Startup Founders</h3>
+                <p>Ship MVPs faster. Validate ideas in days, not months. Stop paying agencies for things you could build yourself.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Build prototypes in hours</li>
+                  <li><CheckIcon /> Reduce dependency on devs</li>
+                  <li><CheckIcon /> Move faster than funded competitors</li>
+                </ul>
+              </div>
+              <div class="who-card">
+                <h3>Tech Executives</h3>
+                <p>Understand what's possible. Lead your team with hands-on knowledge. Make better build vs. buy decisions.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Evaluate AI tools properly</li>
+                  <li><CheckIcon /> Set realistic expectations</li>
+                  <li><CheckIcon /> Drive adoption from the top</li>
+                </ul>
+              </div>
+              <div class="who-card">
+                <h3>Dev Teams</h3>
+                <p>Level up your entire engineering org. Establish best practices. Ship more features with the same headcount.</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> Shared playbook for the team</li>
+                  <li><CheckIcon /> Consistent AI-assisted workflow</li>
+                  <li><CheckIcon /> Measurable productivity gains</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What You'll Learn Section */}
         <section class="section">
           <div class="container">
             <div class="section-label">What You'll Learn</div>
@@ -86,6 +185,16 @@ export default define.page(function Home() {
                 <div class="learn-number">04</div>
                 <h3>Advanced Patterns</h3>
                 <p>MCP servers, multi-file projects, testing, debugging. The patterns that separate hobbyists from pros.</p>
+              </div>
+              <div class="learn-item">
+                <div class="learn-number">05</div>
+                <h3>Debugging AI Output</h3>
+                <p>When code breaks, know how to diagnose, explain, and fix. Turn Claude into your debugging partner.</p>
+              </div>
+              <div class="learn-item">
+                <div class="learn-number">06</div>
+                <h3>Ship to Production</h3>
+                <p>From prototype to deployed product. CI/CD, hosting, monitoring — launch with confidence.</p>
               </div>
             </div>
           </div>
@@ -129,7 +238,7 @@ export default define.page(function Home() {
             <div class="testimonial">
               <blockquote>"In two hours, I went from skeptical to shipping a working prototype. This is the missing manual for building with AI."</blockquote>
               <div class="testimonial-author">
-                <strong>Michael R.</strong><br/>
+                <strong>Michael Borter</strong><br/>
                 <span>CEO, Cashare</span>
               </div>
             </div>
@@ -139,18 +248,18 @@ export default define.page(function Home() {
         <section id="contact" class="section cta-section">
           <div class="container">
             <h2>Ready to vibecode?</h2>
-            <p>Leave your email and I'll reach out within 24 hours to schedule your session.</p>
-            <form class="cta-form">
-              <input type="email" class="cta-input" placeholder="your@email.com" required />
-              <button type="submit" class="cta-submit">Let's Go</button>
-            </form>
+            <p>Drop me a line and let's schedule your session.</p>
+            <a href="mailto:vedran@unchained.shop?subject=Vibecode%20Session" class="hero-cta">
+              Get in Touch
+              <ArrowIcon />
+            </a>
           </div>
         </section>
       </main>
 
       <footer>
         <div class="container">
-          <p>Built with vibes by <a href="#">Vedran</a> · Zürich, Switzerland</p>
+          <p>A service by <a href="https://unchained.ch">Unchained</a> · Zürich · <a href="/impressum">Impressum</a> · <a href="/privacy">Privacy</a></p>
         </div>
       </footer>
     </>
