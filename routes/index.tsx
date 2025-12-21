@@ -132,7 +132,7 @@ export default define.page(function Home() {
             <div class="hero__text">
               <div class="hero__tag">Now accepting clients</div>
               <h1><TypedHeadline /></h1>
-              <p class="hero__subtitle">Hands-on coaching for founders and teams who want to ship faster with Claude Code. Go from idea to production in hours, not weeks. No fluff. Real projects. Immediate results.</p>
+              <p class="hero__subtitle">Skip the beginner mistakes. Learn the tricks that took dozens of real projects to figure out. Know exactly when to prompt, when to code, when to let AI take the wheel — from someone who's already shipped it all to production.</p>
               <a href="#contact" class="hero__cta">
                 Get Started
                 <ArrowIcon />
