@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 
 interface TerminalLine {
-  type: "prompt" | "command" | "action" | "code" | "success" | "info" | "output";
+  type: "prompt" | "command" | "action" | "code" | "success" | "info" | "output" | "result";
   text: string;
   delay?: number;
 }
@@ -11,44 +11,40 @@ const terminalScript: TerminalLine[] = [
   { type: "command", text: "claude", delay: 800 },
   { type: "info", text: "", delay: 300 },
   { type: "prompt", text: ">" },
-  { type: "command", text: " Build a landing page for my SaaS startup", delay: 1200 },
+  { type: "command", text: " Research my top 3 competitors and write LinkedIn posts that make us stand out", delay: 1500 },
   { type: "info", text: "", delay: 400 },
-  { type: "action", text: "⠋ Reading project structure...", delay: 600 },
-  { type: "success", text: "✓ Found Deno Fresh project", delay: 400 },
-  { type: "info", text: "", delay: 200 },
-  { type: "action", text: "⠋ Creating routes/index.tsx...", delay: 500 },
+  { type: "action", text: "⠋ Searching the web...", delay: 600 },
+  { type: "success", text: "✓ Found 12 competitor profiles", delay: 400 },
+  { type: "action", text: "⠋ Analyzing positioning & pricing...", delay: 700 },
+  { type: "success", text: "✓ Identified 3 key differentiators", delay: 400 },
+  { type: "action", text: "⠋ Drafting LinkedIn content...", delay: 600 },
   { type: "info", text: "", delay: 300 },
-  { type: "code", text: "  export default function Home() {", delay: 100 },
-  { type: "code", text: "    return (", delay: 80 },
-  { type: "code", text: "      <main class=\"hero\">", delay: 80 },
-  { type: "code", text: "        <h1>Ship faster with AI</h1>", delay: 80 },
-  { type: "code", text: "        <button>Get Started</button>", delay: 80 },
-  { type: "code", text: "      </main>", delay: 80 },
-  { type: "code", text: "    );", delay: 80 },
-  { type: "code", text: "  }", delay: 100 },
-  { type: "info", text: "", delay: 300 },
-  { type: "success", text: "✓ Created landing page with hero", delay: 300 },
-  { type: "success", text: "✓ Added features section", delay: 250 },
-  { type: "success", text: "✓ Added pricing cards", delay: 250 },
-  { type: "success", text: "✓ Added footer with links", delay: 250 },
+  { type: "result", text: "📝 Post 1: \"Everyone's talking about AI. Here's what", delay: 100 },
+  { type: "result", text: "   we're actually shipping with it...\"", delay: 80 },
+  { type: "result", text: "📝 Post 2: \"Our competitors charge for X. We don't.", delay: 80 },
+  { type: "result", text: "   Here's why...\"", delay: 80 },
+  { type: "result", text: "📝 Post 3: \"3 things I learned from analyzing 50", delay: 80 },
+  { type: "result", text: "   Swiss fintech landing pages...\"", delay: 100 },
   { type: "info", text: "", delay: 400 },
-  { type: "action", text: "⠋ Starting dev server...", delay: 600 },
-  { type: "output", text: "Server running at http://localhost:8000", delay: 400 },
+  { type: "success", text: "✓ Saved to Google Docs", delay: 300 },
+  { type: "success", text: "✓ Scheduled in LinkedIn queue", delay: 300 },
+  { type: "info", text: "", delay: 500 },
+  { type: "output", text: "Done. 3 posts ready. What's next?", delay: 400 },
   { type: "info", text: "", delay: 800 },
   { type: "prompt", text: ">" },
-  { type: "command", text: " Add a contact form with validation", delay: 1000 },
+  { type: "command", text: " Now build me a dashboard to track campaign performance", delay: 1200 },
   { type: "info", text: "", delay: 400 },
-  { type: "action", text: "⠋ Editing routes/index.tsx...", delay: 500 },
-  { type: "success", text: "✓ Added contact form component", delay: 300 },
-  { type: "success", text: "✓ Added email validation", delay: 300 },
-  { type: "success", text: "✓ Connected to form backend", delay: 300 },
-  { type: "info", text: "", delay: 400 },
-  { type: "output", text: "Done. Your landing page is ready to ship.", delay: 500 },
+  { type: "action", text: "⠋ Creating React components...", delay: 500 },
+  { type: "action", text: "⠋ Connecting to analytics API...", delay: 500 },
+  { type: "action", text: "⠋ Adding charts and filters...", delay: 500 },
+  { type: "success", text: "✓ Dashboard running at localhost:3000", delay: 300 },
+  { type: "info", text: "", delay: 600 },
+  { type: "prompt", text: ">" },
+  { type: "command", text: "_", delay: 0 },
 ];
 
 export default function TerminalDemo() {
   const [visibleLines, setVisibleLines] = useState<number>(0);
-  const [isTyping, setIsTyping] = useState(false);
   const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -90,6 +86,7 @@ export default function TerminalDemo() {
       case "code": return "terminal-code";
       case "success": return "terminal-success";
       case "output": return "terminal-output";
+      case "result": return "terminal-result";
       default: return "";
     }
   };
@@ -102,23 +99,17 @@ export default function TerminalDemo() {
           <span class="terminal-btn terminal-btn-yellow"></span>
           <span class="terminal-btn terminal-btn-green"></span>
         </div>
-        <div class="terminal-title">claude — vibecode</div>
+        <div class="terminal-title">claude — your AI agent</div>
       </div>
       <div class="terminal-body" ref={bodyRef}>
         {terminalScript.slice(0, visibleLines).map((line, i) => (
           <div key={i} class={`terminal-line ${getLineClass(line.type)}`}>
             {line.text}
-            {i === visibleLines - 1 && line.type === "command" && (
+            {i === visibleLines - 1 && line.type === "command" && line.text === "_" && (
               <span class="terminal-cursor">▋</span>
             )}
           </div>
         ))}
-        {visibleLines > 0 && visibleLines === terminalScript.length && (
-          <div class="terminal-line">
-            <span class="terminal-prompt">{">"}</span>
-            <span class="terminal-cursor">▋</span>
-          </div>
-        )}
       </div>
     </div>
   );

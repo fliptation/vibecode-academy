@@ -1,4 +1,4 @@
-# Vibecode Cheatsheet
+# Unchained Academy Cheatsheet
 ## Prompting Patterns for Claude Code
 
 ---

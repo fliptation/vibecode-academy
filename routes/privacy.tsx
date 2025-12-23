@@ -5,7 +5,7 @@ export default define.page(function Privacy() {
     <>
       <header>
         <div class="container header-inner">
-          <a href="/" class="logo">vibe<span>code</span></a>
+          <a href="/" class="logo">unchained<span>academy</span></a>
           <a href="/#contact" class="nav-cta">Book a Session</a>
         </div>
       </header>
@@ -18,7 +18,7 @@ export default define.page(function Privacy() {
             <div class="legal-content">
               <div class="legal-section">
                 <h3>Overview</h3>
-                <p>Vibecode is a service by Unchained Commerce GmbH. We take your privacy seriously and are committed to protecting your personal data.</p>
+                <p>Unchained Academy is a service by Unchained Commerce GmbH. We take your privacy seriously and are committed to protecting your personal data.</p>
               </div>
 
               <div class="legal-section">
@@ -57,7 +57,7 @@ export default define.page(function Privacy() {
 
       <footer>
         <div class="container">
-          <p>A service by <a href="https://unchained.ch">Unchained</a> · Zürich · <a href="/impressum">Impressum</a> · <a href="/privacy">Privacy</a></p>
+          <p>© 2026 Unchained Commerce GmbH · Zürich · <a href="/impressum">Impressum</a> · <a href="/privacy">Privacy</a></p>
         </div>
       </footer>
     </>

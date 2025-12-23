@@ -1,10 +1,9 @@
-# Vibecode Academy
+# Unchained Academy
 
 ## Project Overview
 
-This is the marketing site and resources for Vibecode Academy — a coaching service teaching founders, executives, and teams how to build with AI (specifically Claude Code).
+This is the marketing site and resources for Unchained Academy — a coaching service teaching founders, executives, and teams how to build with AI (specifically Claude Code).
 
-**Owner:** Vedran  
 **Location:** Zürich, Switzerland  
 **Target audience:** Tech-savvy executives, startup founders, dev teams
 
@@ -24,13 +23,6 @@ This is the marketing site and resources for Vibecode Academy — a coaching ser
 └── CLAUDE.md           # This file
 ```
 
-## Design Principles
-
-- Dark, premium aesthetic (not generic SaaS look)
-- Monospace + serif font pairing (JetBrains Mono + Instrument Serif)
-- Accent color: cyan (#22d3ee)
-- Minimal, no bloat — this is a one-person service, not a startup
-
 ## Content Guidelines
 
 - Direct, confident tone — no hedging or corporate speak
@@ -40,8 +32,9 @@ This is the marketing site and resources for Vibecode Academy — a coaching ser
 ## Current Offerings
 
 1. **Executive 1:1** — CHF 500 / 2 hours
-2. **Team Workshop** — CHF 2,500 / half-day
-3. **Ongoing Advisory** — CHF 1,500 / month
+2. **Launchpad** — CHF 1,500 / one-time (full technical setup)
+3. **Team Workshop** — CHF 2,500 / half-day
+4. **Academy Partner** — CHF 1,500 / month
 
 ## TODO
 

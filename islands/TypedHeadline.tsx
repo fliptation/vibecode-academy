@@ -1,10 +1,10 @@
 import { useEffect, useState } from "preact/hooks";
 
 const phrases = [
-  "Learn to build with AI",
-  "Ship fasterer",
-  "Build real products",
-  "Code with vibes",
+  "Direct AI agents",
+  "Ship in hours, not weeks",
+  "Automate the grind",
+  "Build while you sleep",
 ];
 
 export default function TypedHeadline() {

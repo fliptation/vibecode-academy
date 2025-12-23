@@ -5,7 +5,7 @@ export default define.page(function Impressum() {
     <>
       <header>
         <div class="container header-inner">
-          <a href="/" class="logo">vibe<span>code</span></a>
+          <a href="/" class="logo">unchained<span>academy</span></a>
           <a href="/#contact" class="nav-cta">Book a Session</a>
         </div>
       </header>
@@ -59,7 +59,7 @@ export default define.page(function Impressum() {
 
       <footer>
         <div class="container">
-          <p>A service by <a href="https://unchained.ch">Unchained</a> · Zürich · <a href="/impressum">Impressum</a> · <a href="/privacy">Privacy</a></p>
+          <p>© 2026 Unchained Commerce GmbH · Zürich · <a href="/impressum">Impressum</a> · <a href="/privacy">Privacy</a></p>
         </div>
       </footer>
     </>

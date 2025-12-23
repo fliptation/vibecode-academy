@@ -1,4 +1,4 @@
-# Vibecode Intro Session
+# Unchained Academy Intro Session
 ## 2-Hour Executive Workshop for Michael (CEO, Cashare)
 
 ---
