@@ -240,6 +240,7 @@ export default function PageContent() {
           </a>
           <nav class="navbar__nav navbar__nav--desktop">
             <a href="#agents" class="navbar__link">{t.navAgents}</a>
+            <a href="#security" class="navbar__link">{t.navSecurity}</a>
             <a href="#formate" class="navbar__link">{t.navFormats}</a>
             <LanguageSwitcher />
             <ThemeToggle />
@@ -266,6 +267,7 @@ export default function PageContent() {
         </div>
         <nav class="drawer__nav">
           <a href="#agents" class="drawer__link" onClick={closeMenu}>{t.navAgents}</a>
+          <a href="#security" class="drawer__link" onClick={closeMenu}>{t.navSecurity}</a>
           <a href="#formate" class="drawer__link" onClick={closeMenu}>{t.navFormats}</a>
           <a href="#contact" class="drawer__link drawer__link--cta" onClick={closeMenu}>{t.bookSession}</a>
         </nav>
@@ -494,6 +496,47 @@ export default function PageContent() {
           </div>
         </section>
 
+        {/* Security Section */}
+        <section id="security" class="section security-section">
+          <div class="container">
+            <div class="section-label">{t.securityLabel}</div>
+            <h2 class="section-title">{t.securityTitle}</h2>
+            <p class="section-intro">{t.securityIntro}</p>
+            <div class="security-grid">
+              <div class="security-card">
+                <div class="security-number">01</div>
+                <h3>{t.security1Title}</h3>
+                <p>{t.security1Desc}</p>
+              </div>
+              <div class="security-card">
+                <div class="security-number">02</div>
+                <h3>{t.security2Title}</h3>
+                <p>{t.security2Desc}</p>
+              </div>
+              <div class="security-card">
+                <div class="security-number">03</div>
+                <h3>{t.security3Title}</h3>
+                <p>{t.security3Desc}</p>
+              </div>
+              <div class="security-card">
+                <div class="security-number">04</div>
+                <h3>{t.security4Title}</h3>
+                <p>{t.security4Desc}</p>
+              </div>
+              <div class="security-card">
+                <div class="security-number">05</div>
+                <h3>{t.security5Title}</h3>
+                <p>{t.security5Desc}</p>
+              </div>
+              <div class="security-card">
+                <div class="security-number">06</div>
+                <h3>{t.security6Title}</h3>
+                <p>{t.security6Desc}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section class="section about-section">
           <div class="container">
@@ -528,28 +571,61 @@ export default function PageContent() {
             <h2 class="section-title">{t.formatsTitle}</h2>
             <div class="formats-grid">
               <div class="format-card">
-                <div class="format-icon">
-                  <UserIcon />
+                <div class="format-header">
+                  <div class="format-icon">
+                    <UserIcon />
+                  </div>
+                  <h3>{t.format1Title}</h3>
                 </div>
-                <h3>{t.format1Title}</h3>
-                <div class="format-price">{t.format1Price}</div>
-                <p>{t.format1Desc}</p>
+                <div class="format-pricing">
+                  <span class="format-price">{t.format1Price}</span>
+                  <span class="format-duration">{t.format1Duration}</span>
+                </div>
+                <p class="format-desc">{t.format1Desc}</p>
+                <ul class="format-features">
+                  <li><CheckIcon /> {t.format1Feature1}</li>
+                  <li><CheckIcon /> {t.format1Feature2}</li>
+                  <li><CheckIcon /> {t.format1Feature3}</li>
+                  <li><CheckIcon /> {t.format1Feature4}</li>
+                </ul>
+              </div>
+              <div class="format-card format-card--popular">
+                <div class="format-header">
+                  <div class="format-icon">
+                    <RocketIcon />
+                  </div>
+                  <h3>{t.format2Title}</h3>
+                </div>
+                <div class="format-pricing">
+                  <span class="format-price">{t.format2Price}</span>
+                  <span class="format-duration">{t.format2Duration}</span>
+                </div>
+                <p class="format-desc">{t.format2Desc}</p>
+                <ul class="format-features">
+                  <li><CheckIcon /> {t.format2Feature1}</li>
+                  <li><CheckIcon /> {t.format2Feature2}</li>
+                  <li><CheckIcon /> {t.format2Feature3}</li>
+                  <li><CheckIcon /> {t.format2Feature4}</li>
+                </ul>
               </div>
               <div class="format-card">
-                <div class="format-icon">
-                  <RocketIcon />
+                <div class="format-header">
+                  <div class="format-icon">
+                    <LayersIcon />
+                  </div>
+                  <h3>{t.format3Title}</h3>
                 </div>
-                <h3>{t.format2Title}</h3>
-                <div class="format-price">{t.format2Price}</div>
-                <p>{t.format2Desc}</p>
-              </div>
-              <div class="format-card">
-                <div class="format-icon">
-                  <LayersIcon />
+                <div class="format-pricing">
+                  <span class="format-price">{t.format3Price}</span>
+                  <span class="format-duration">{t.format3Duration}</span>
                 </div>
-                <h3>{t.format3Title}</h3>
-                <div class="format-price">{t.format3Price}</div>
-                <p>{t.format3Desc}</p>
+                <p class="format-desc">{t.format3Desc}</p>
+                <ul class="format-features">
+                  <li><CheckIcon /> {t.format3Feature1}</li>
+                  <li><CheckIcon /> {t.format3Feature2}</li>
+                  <li><CheckIcon /> {t.format3Feature3}</li>
+                  <li><CheckIcon /> {t.format3Feature4}</li>
+                </ul>
               </div>
             </div>
           </div>
