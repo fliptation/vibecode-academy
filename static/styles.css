@@ -762,6 +762,107 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   AI-Native Workflows Section
+   -------------------------------------------------------------------------- */
+.workflow-section {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    rgba(58, 175, 169, 0.03) 50%,
+    var(--bg) 100%
+  );
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.workflow-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.workflow-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.workflow-card:hover::before {
+  opacity: 1;
+}
+
+.workflow-card__header {
+  margin-bottom: 1.25rem;
+}
+
+.workflow-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  color: var(--accent);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.workflow-card:hover .workflow-card__icon {
+  background: var(--accent);
+  color: var(--bg);
+  transform: scale(1.05);
+}
+
+.workflow-card h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.workflow-card p {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+@media (max-width: 768px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .workflow-card:hover::before {
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Security Section
    -------------------------------------------------------------------------- */
 .security-section {
@@ -1137,7 +1238,7 @@ body {
    -------------------------------------------------------------------------- */
 .who-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto auto;
   gap: 2rem;
 }
@@ -1190,6 +1291,11 @@ body {
 .who-list li svg {
   color: var(--accent);
   flex-shrink: 0;
+}
+
+.who-card--highlight {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 40%);
 }
 
 /* --------------------------------------------------------------------------
@@ -1509,9 +1615,9 @@ body {
   margin: 0 auto;
   text-align: left;
   padding: 4rem 3rem;
-  background: var(--card-bg);
+  background: var(--bg);
   border: 1px solid var(--border);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 0 80px 20px var(--accent-glow-strong);
 }
 
 .cta-badge {
@@ -1792,11 +1898,6 @@ footer a:hover {
     grid-row: auto;
   }
 
-  .who-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
   .who-card {
     grid-template-rows: auto auto auto;
     grid-row: auto;
@@ -1853,6 +1954,10 @@ footer a:hover {
   }
 
   .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-grid {
     grid-template-columns: 1fr;
   }
 

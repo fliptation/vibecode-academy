@@ -93,6 +93,11 @@ export const translations = {
     who3Item1: "Shared playbook for the team",
     who3Item2: "Consistent AI-assisted workflow",
     who3Item3: "More output, same team size",
+    who4Title: "CTOs & Tech Leaders",
+    who4Desc: "Your developers are your biggest investment. Give them Claude Code Pro — it's CHF 200/month per seat. The ROI is immediate and measurable.",
+    who4Item1: "10x developer velocity on routine tasks",
+    who4Item2: "Junior devs perform like seniors",
+    who4Item3: "Ship features in days, not sprints",
 
     // What you'll learn
     learnLabel: "What You'll Learn",
@@ -110,22 +115,35 @@ export const translations = {
     learn6Title: "Ship to Production",
     learn6Desc: "From prototype to live product. Deploy dashboards, automate workflows, set up systems that run without you.",
 
+    // AI-Native Workflows section
+    workflowLabel: "AI-Native Workflows",
+    workflowTitle: "From quarterly planning to continuous intelligence",
+    workflowIntro: "Traditional planning cycles are too slow. AI agents enable a new way of working — continuous research, real-time insights, and adaptive strategy. Here's how to make the shift.",
+    workflow1Title: "Continuous Competitive Intelligence",
+    workflow1Desc: "Stop waiting for quarterly reports. AI agents scan competitors weekly — pricing changes, new features, messaging shifts. You'll know what's happening in your market before your competitors do.",
+    workflow2Title: "Real-Time Market Research",
+    workflow2Desc: "Customer feedback synthesized on demand. Trend detection as it happens. No more month-old surveys — get answers to market questions in hours, not quarters.",
+    workflow3Title: "Adaptive Strategy Execution",
+    workflow3Desc: "Replace rigid quarterly OKRs with weekly planning sprints. Adjust based on live data, not assumptions made three months ago. AI agents surface what's working and what isn't.",
+    workflow4Title: "Decision Intelligence On-Demand",
+    workflow4Desc: "Get the analysis you need when you need it. Scenario modeling, impact assessment, risk analysis — all on your timeline, not waiting for the next board meeting.",
+
     // Security section
     securityLabel: "Security & Risks",
     securityTitle: "AI power comes with responsibility",
     securityIntro: "AI agents are powerful — but with power comes new risks. We teach you how to use AI safely, protect your data, and avoid costly mistakes that can damage your business.",
-    security1Title: "Data Privacy & Confidentiality",
-    security1Desc: "Never put sensitive company data in prompts. Customer lists, financial data, trade secrets, internal strategies — keep them out. Claude doesn't store conversations for training, but API logs can exist. We show you exactly what's safe to share and what isn't. Learn to get maximum value without exposing critical information.",
-    security2Title: "Code Security",
-    security2Desc: "AI-generated code can contain vulnerabilities. SQL injection, XSS, insecure dependencies — AI makes the same mistakes humans do, sometimes more confidently. Always review generated code. Never hardcode credentials. We teach you to use AI as a coding assistant while maintaining security standards. Automated security scans are your friend.",
-    security3Title: "API Key Management",
-    security3Desc: "Your API key is money. Never commit keys to code repositories. Use environment variables. Set spending limits — a runaway script can burn thousands overnight. Rotate keys regularly. Monitor for unusual usage patterns. We show you the exact setup that protects your wallet and your access.",
-    security4Title: "New AI-Specific Risks",
-    security4Desc: "Prompt injection: malicious inputs can manipulate AI behavior. Hallucinations: AI invents facts with confidence — always verify critical information. Over-reliance: AI is a tool, not an expert. It doesn't understand your business context. Learn to recognize when AI is guessing vs. when it knows.",
-    security5Title: "Enterprise Best Practices",
-    security5Desc: "Clear team guidelines for AI usage. Who can use what, for which tasks. Audit trails for compliance. GDPR considerations — where does your data go? Training for employees on safe AI practices. We help you build a framework that scales with your team while staying compliant.",
-    security6Title: "Intellectual Property & Copyright",
-    security6Desc: "Who owns AI-generated code? Can you use it commercially? AI outputs can inadvertently reproduce copyrighted material. Your prompts might contain proprietary ideas — be careful what you share. We cover licensing, attribution, and how to protect your IP while leveraging AI. Know your rights before you ship.",
+    security1Title: "Keep Sensitive Data Private",
+    security1Desc: "Customer lists, financials, trade secrets — know what's safe to share with AI and what stays internal. We show you exactly where the line is, so you get maximum value without risking exposure.",
+    security2Title: "Review Before You Ship",
+    security2Desc: "AI-generated code needs human oversight. Just like work from a new hire, you verify it's correct and secure. We teach you efficient review workflows that catch issues before they become problems.",
+    security3Title: "Control Your Costs",
+    security3Desc: "Your API key is money. A misconfigured script can run up thousands overnight. We show you how to set spending limits, monitor usage, and keep your costs predictable.",
+    security4Title: "Know When AI Is Guessing",
+    security4Desc: "AI can sound confident while being completely wrong. It doesn't understand your business context. Learn to spot when AI is reliable and when you need to verify — this skill alone saves hours of debugging.",
+    security5Title: "Team Guidelines That Work",
+    security5Desc: "Who uses AI for what? How do you stay GDPR-compliant? We help you create practical guidelines that your team will actually follow — not 50-page policies that collect dust.",
+    security6Title: "Protect Your Intellectual Property",
+    security6Desc: "Who owns AI-generated work? What can you use commercially? We cover the licensing basics and help you protect your ideas while leveraging AI. Know your rights before you ship.",
 
     // About section
     aboutLabel: "Your Guide",
@@ -202,7 +220,7 @@ export const translations = {
 
     // Hero
     heroTag: "KI-Agenten für Gründer",
-    heroSubtitle: "Hör auf zu arbeiten. Fang an, KI-Agenten zu dirigieren, die für dich recherchieren, schreiben, bauen und ausliefern. Du gehst mit Agenten raus, die auf deinen echten Aufgaben laufen — keine hypothetischen Demos.",
+    heroSubtitle: "Dirigiere KI-Agenten, die für dich recherchieren, schreiben, bauen und ausliefern. Du gehst mit Agenten raus, die auf deinen echten Aufgaben laufen — keine hypothetischen Demos.",
     getStarted: "Jetzt starten",
 
     // Testimonial
@@ -282,6 +300,11 @@ export const translations = {
     who3Item1: "Gemeinsames Playbook fürs Team",
     who3Item2: "Konsistenter KI-gestützter Workflow",
     who3Item3: "Mehr Output, gleiche Teamgrösse",
+    who4Title: "CTOs & Tech-Leader",
+    who4Desc: "Deine Entwickler sind dein grösstes Investment. Gib ihnen Claude Code Pro — CHF 200/Monat pro Seat. Der ROI ist sofort messbar.",
+    who4Item1: "10x Entwickler-Velocity bei Routine-Tasks",
+    who4Item2: "Junior-Devs performen wie Seniors",
+    who4Item3: "Features in Tagen statt Sprints shippen",
 
     // What you'll learn
     learnLabel: "Was du lernst",
@@ -299,22 +322,35 @@ export const translations = {
     learn6Title: "In Produktion bringen",
     learn6Desc: "Vom Prototyp zum Live-Produkt. Dashboards deployen, Workflows automatisieren, Systeme einrichten, die ohne dich laufen.",
 
+    // AI-Native Workflows section
+    workflowLabel: "KI-Native Workflows",
+    workflowTitle: "Von Quartalsplanung zu kontinuierlicher Intelligenz",
+    workflowIntro: "Traditionelle Planungszyklen sind zu langsam. KI-Agenten ermöglichen eine neue Arbeitsweise — kontinuierliche Recherche, Echtzeit-Einblicke und adaptive Strategie. So gelingt der Wandel.",
+    workflow1Title: "Kontinuierliche Wettbewerbsanalyse",
+    workflow1Desc: "Schluss mit Quartalsberichten. KI-Agenten scannen Wettbewerber wöchentlich — Preisänderungen, neue Features, Messaging-Shifts. Du weisst, was in deinem Markt passiert, bevor es deine Konkurrenz tut.",
+    workflow2Title: "Echtzeit-Marktforschung",
+    workflow2Desc: "Kundenfeedback auf Abruf synthetisiert. Trend-Erkennung in Echtzeit. Keine monatelten Umfragen mehr — Antworten auf Marktfragen in Stunden, nicht Quartalen.",
+    workflow3Title: "Adaptive Strategieumsetzung",
+    workflow3Desc: "Ersetze starre Quartals-OKRs durch wöchentliche Planungssprints. Anpassen basierend auf Live-Daten, nicht auf Annahmen von vor drei Monaten. KI-Agenten zeigen, was funktioniert und was nicht.",
+    workflow4Title: "Entscheidungsintelligenz auf Abruf",
+    workflow4Desc: "Bekomme die Analyse, die du brauchst, wenn du sie brauchst. Szenario-Modellierung, Impact-Assessment, Risikoanalyse — alles nach deinem Zeitplan, nicht warten auf das nächste Board-Meeting.",
+
     // Security section
     securityLabel: "Sicherheit & Risiken",
     securityTitle: "Mit KI-Power kommt Verantwortung",
     securityIntro: "KI-Agenten sind mächtig — aber mit Macht kommen neue Risiken. Wir zeigen dir, wie du KI sicher nutzt, deine Daten schützt und teure Fehler vermeidest, die dein Business beschädigen können.",
-    security1Title: "Datenschutz & Vertraulichkeit",
-    security1Desc: "Niemals sensible Firmendaten in Prompts. Kundenlisten, Finanzdaten, Geschäftsgeheimnisse, interne Strategien — halte sie raus. Claude speichert Gespräche nicht für Training, aber API-Logs können existieren. Wir zeigen dir genau, was sicher ist und was nicht. Lerne, maximalen Wert zu bekommen ohne kritische Informationen preiszugeben.",
-    security2Title: "Code-Sicherheit",
-    security2Desc: "KI-generierter Code kann Schwachstellen enthalten. SQL-Injection, XSS, unsichere Dependencies — KI macht dieselben Fehler wie Menschen, manchmal selbstbewusster. Code immer reviewen. Niemals Credentials hardcoden. Wir zeigen dir, wie du KI als Coding-Assistent nutzt und dabei Sicherheitsstandards einhältst. Automatisierte Security-Scans sind dein Freund.",
-    security3Title: "API-Key Management",
-    security3Desc: "Dein API-Key ist Geld. Niemals Keys in Code-Repos committen. Umgebungsvariablen nutzen. Spending Limits setzen — ein ausser Kontrolle geratenes Skript kann über Nacht Tausende verbrennen. Keys regelmässig rotieren. Ungewöhnliche Nutzungsmuster überwachen. Wir zeigen dir das exakte Setup, das dein Portemonnaie und deinen Zugang schützt.",
-    security4Title: "Neue KI-spezifische Risiken",
-    security4Desc: "Prompt Injection: bösartige Inputs können KI-Verhalten manipulieren. Halluzinationen: KI erfindet Fakten mit Selbstvertrauen — kritische Informationen immer verifizieren. Übermässiges Vertrauen: KI ist ein Tool, kein Experte. Sie versteht deinen Business-Kontext nicht. Lerne zu erkennen, wann KI rät vs. wann sie weiss.",
-    security5Title: "Enterprise Best Practices",
-    security5Desc: "Klare Team-Richtlinien für KI-Nutzung. Wer darf was, für welche Aufgaben. Audit-Trails für Compliance. GDPR-Überlegungen — wohin gehen deine Daten? Schulungen für Mitarbeiter zu sicheren KI-Praktiken. Wir helfen dir, ein Framework zu bauen, das mit deinem Team skaliert und dabei compliant bleibt.",
-    security6Title: "Geistiges Eigentum & Copyright",
-    security6Desc: "Wem gehört KI-generierter Code? Darfst du ihn kommerziell nutzen? KI-Outputs können unbeabsichtigt urheberrechtlich geschütztes Material reproduzieren. Deine Prompts könnten proprietäre Ideen enthalten — sei vorsichtig, was du teilst. Wir behandeln Lizenzierung, Attribution und wie du dein IP schützt, während du KI nutzt. Kenne deine Rechte, bevor du auslieferst.",
+    security1Title: "Sensible Daten schützen",
+    security1Desc: "Kundenlisten, Finanzdaten, Geschäftsgeheimnisse — wisse, was du mit KI teilen kannst und was intern bleibt. Wir zeigen dir genau, wo die Grenze ist.",
+    security2Title: "Prüfen vor dem Ausliefern",
+    security2Desc: "KI-generierter Code braucht menschliche Kontrolle. Wie bei einem neuen Mitarbeiter prüfst du, ob alles korrekt und sicher ist. Wir zeigen dir effiziente Review-Workflows.",
+    security3Title: "Kosten im Griff",
+    security3Desc: "Dein API-Key ist Geld. Ein falsch konfiguriertes Skript kann über Nacht Tausende kosten. Wir zeigen dir, wie du Limits setzt und Kosten vorhersehbar hältst.",
+    security4Title: "Erkennen, wann KI rät",
+    security4Desc: "KI kann selbstbewusst klingen, obwohl sie komplett falsch liegt. Sie versteht deinen Business-Kontext nicht. Lerne zu erkennen, wann du prüfen musst — diese Fähigkeit spart Stunden.",
+    security5Title: "Team-Richtlinien, die funktionieren",
+    security5Desc: "Wer nutzt KI wofür? Wie bleibt ihr GDPR-konform? Wir helfen dir, praktische Richtlinien zu erstellen, die dein Team auch befolgt — keine 50-Seiten-Policies.",
+    security6Title: "Geistiges Eigentum schützen",
+    security6Desc: "Wem gehört KI-generierte Arbeit? Was darfst du kommerziell nutzen? Wir behandeln die Lizenz-Basics und helfen dir, deine Ideen zu schützen. Kenne deine Rechte.",
 
     // About section
     aboutLabel: "Dein Guide",
@@ -358,7 +394,7 @@ export const translations = {
 
     // CTA
     ctaBadge: "Begrenzte Verfügbarkeit",
-    ctaTitle: "Bereit, aufzuhören zu arbeiten?",
+    ctaTitle: "Lass Agenten für dich arbeiten",
     ctaSubtitle: "Eine Session. Deine ersten Agenten. Laufen bevor du gehst.",
     ctaBenefit1: "2-Stunden Intensiv, auf dein Business zugeschnitten",
     ctaBenefit2: "Geh mit funktionierenden Agenten für echte Aufgaben",

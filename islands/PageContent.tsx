@@ -451,6 +451,15 @@ export default function PageContent() {
                   <li><CheckIcon /> {t.who3Item3}</li>
                 </ul>
               </div>
+              <div class="who-card who-card--highlight">
+                <h3>{t.who4Title}</h3>
+                <p>{t.who4Desc}</p>
+                <ul class="who-list">
+                  <li><CheckIcon /> {t.who4Item1}</li>
+                  <li><CheckIcon /> {t.who4Item2}</li>
+                  <li><CheckIcon /> {t.who4Item3}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -490,6 +499,74 @@ export default function PageContent() {
                 <div class="learn-number">06</div>
                 <h3>{t.learn6Title}</h3>
                 <p>{t.learn6Desc}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI-Native Workflows Section */}
+        <section class="section workflow-section">
+          <div class="container">
+            <div class="section-label">{t.workflowLabel}</div>
+            <h2 class="section-title">{t.workflowTitle}</h2>
+            <p class="section-intro">{t.workflowIntro}</p>
+            <div class="workflow-grid">
+              <div class="workflow-card">
+                <div class="workflow-card__header">
+                  <div class="workflow-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                      <path d="M2 12h20"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3>{t.workflow1Title}</h3>
+                <p>{t.workflow1Desc}</p>
+              </div>
+              <div class="workflow-card">
+                <div class="workflow-card__header">
+                  <div class="workflow-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 3v18h18"/>
+                      <path d="M18 17V9"/>
+                      <path d="M13 17V5"/>
+                      <path d="M8 17v-3"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3>{t.workflow2Title}</h3>
+                <p>{t.workflow2Desc}</p>
+              </div>
+              <div class="workflow-card">
+                <div class="workflow-card__header">
+                  <div class="workflow-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+                      <path d="M21 3v5h-5"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3>{t.workflow3Title}</h3>
+                <p>{t.workflow3Desc}</p>
+              </div>
+              <div class="workflow-card">
+                <div class="workflow-card__header">
+                  <div class="workflow-card__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v4"/>
+                      <path d="M12 18v4"/>
+                      <path d="m4.93 4.93 2.83 2.83"/>
+                      <path d="m16.24 16.24 2.83 2.83"/>
+                      <path d="M2 12h4"/>
+                      <path d="M18 12h4"/>
+                      <path d="m4.93 19.07 2.83-2.83"/>
+                      <path d="m16.24 7.76 2.83-2.83"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3>{t.workflow4Title}</h3>
+                <p>{t.workflow4Desc}</p>
               </div>
             </div>
           </div>
