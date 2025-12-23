@@ -1,17 +1,28 @@
 import { useEffect, useState } from "preact/hooks";
+import { getTypedPhrases, type Language } from "../utils/translations.ts";
 
-const phrases = [
-  "Direct AI agents",
-  "Ship in hours, not weeks",
-  "Automate the grind",
-  "Build while you sleep",
-];
+interface Props {
+  lang?: Language;
+}
 
-export default function TypedHeadline() {
+export default function TypedHeadline({ lang = "en" }: Props) {
   const [displayText, setDisplayText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [currentLang, setCurrentLang] = useState<Language>(lang);
+  const [phrases, setPhrases] = useState<string[]>(getTypedPhrases(lang));
+
+  // Check localStorage for language preference on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("lang") as Language | null;
+      if (stored === "de" || stored === "en") {
+        setCurrentLang(stored);
+        setPhrases(getTypedPhrases(stored));
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
@@ -36,7 +47,7 @@ export default function TypedHeadline() {
     }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, phraseIndex]);
+  }, [charIndex, isDeleting, phraseIndex, phrases]);
 
   return (
     <span class="typed-text">
