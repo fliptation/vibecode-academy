@@ -3,8 +3,8 @@ export type Language = "en" | "de";
 export const translations = {
   en: {
     // Header
-    logo: "unchained",
-    logoAccent: "academy",
+    logo: "UNCHAINED",
+    logoAccent: "Academy",
     bookSession: "Book a Session",
 
     // Hero
@@ -153,8 +153,8 @@ export const translations = {
   },
   de: {
     // Header
-    logo: "unchained",
-    logoAccent: "academy",
+    logo: "UNCHAINED",
+    logoAccent: "Academy",
     bookSession: "Session buchen",
 
     // Hero

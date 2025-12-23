@@ -121,6 +121,45 @@ function RocketIcon() {
   );
 }
 
+// Logo: Broken Infinity Symbol
+function LogoIcon() {
+  return (
+    <svg
+      width="32"
+      height="20"
+      viewBox="0 0 64 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      class="logo__icon"
+    >
+      {/* Left loop of infinity - breaks before center */}
+      <path
+        d="M6 20C6 13.4 11.4 8 18 8C22.5 8 26.5 10.5 28.5 14.5L30 17"
+        stroke="var(--accent)"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+      {/* Right loop - breaks after center */}
+      <path
+        d="M34 23L35.5 25.5C37.5 29.5 41.5 32 46 32C52.6 32 58 26.6 58 20C58 13.4 52.6 8 46 8C41.5 8 37.5 10.5 35.5 14.5L34 17"
+        stroke="var(--accent)"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+      {/* Bottom of left loop */}
+      <path
+        d="M28.5 25.5C26.5 29.5 22.5 32 18 32C11.4 32 6 26.6 6 20"
+        stroke="var(--accent)"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+      {/* The break point - transformation moment */}
+      <circle cx="32" cy="20" r="3" fill="var(--fg)" />
+    </svg>
+  );
+}
+
 export default function PageContent() {
   const [lang, setLang] = useState<Language>("en");
   const t = translations[lang];
@@ -154,7 +193,10 @@ export default function PageContent() {
       <MeteorShower />
       <header>
         <div class="container header-inner">
-          <div class="logo">{t.logo}<span>{t.logoAccent}</span></div>
+          <a href="/" class="logo" aria-label="Unchained Academy">
+            <LogoIcon />
+            <span class="logo__text">{t.logo}<span>{t.logoAccent}</span></span>
+          </a>
           <div class="header-actions">
             <LanguageSwitcher />
             <ThemeToggle />
