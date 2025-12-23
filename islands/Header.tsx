@@ -121,7 +121,6 @@ export default function Header() {
       <div class={`drawer-overlay ${menuOpen ? "drawer-overlay--open" : ""}`} onClick={closeMenu} />
       <aside class={`drawer ${menuOpen ? "drawer--open" : ""}`}>
         <div class="drawer__header">
-          <span class="drawer__title">{t.logo}<span>{t.logoAccent}</span></span>
           <button class="drawer__close" onClick={closeMenu} aria-label="Close menu">
             <CloseIcon />
           </button>
