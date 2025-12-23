@@ -1,14 +1,10 @@
 import { define } from "../utils.ts";
+import Header from "../islands/Header.tsx";
 
 export default define.page(function Privacy() {
   return (
     <>
-      <header>
-        <div class="container header-inner">
-          <a href="/" class="logo">unchained<span>academy</span></a>
-          <a href="/#contact" class="nav-cta">Book a Session</a>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section class="section">

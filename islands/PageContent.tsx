@@ -15,6 +15,25 @@ function ArrowIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  );
+}
+
 function UserIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -162,6 +181,7 @@ function LogoIcon() {
 
 export default function PageContent() {
   const [lang, setLang] = useState<Language>("en");
+  const [menuOpen, setMenuOpen] = useState(false);
   const t = translations[lang];
 
   useEffect(() => {
@@ -170,6 +190,27 @@ export default function PageContent() {
       setLang(stored);
     }
   }, []);
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
 
   // Cursor-following glow effect for cards
   useEffect(() => {
@@ -191,19 +232,48 @@ export default function PageContent() {
   return (
     <>
       <MeteorShower />
-      <header>
+      <header class="navbar">
         <div class="container header-inner">
           <a href="/" class="logo" aria-label="Unchained Academy">
             <LogoIcon />
             <span class="logo__text">{t.logo}<span>{t.logoAccent}</span></span>
           </a>
-          <div class="header-actions">
+          <nav class="navbar__nav navbar__nav--desktop">
+            <a href="#agents" class="navbar__link">{t.navAgents}</a>
+            <a href="#formate" class="navbar__link">{t.navFormats}</a>
             <LanguageSwitcher />
             <ThemeToggle />
-            <a href="#contact" class="nav-cta">{t.bookSession}</a>
-          </div>
+            <a href="#contact" class="navbar__link navbar__link--cta">{t.bookSession}</a>
+          </nav>
+          <button
+            class="navbar__menu-btn"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            {t.menuLabel}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Menu Drawer */}
+      <div class={`drawer-overlay ${menuOpen ? "drawer-overlay--open" : ""}`} onClick={closeMenu} />
+      <aside class={`drawer ${menuOpen ? "drawer--open" : ""}`}>
+        <div class="drawer__header">
+          <span class="drawer__title">{t.logo}<span>{t.logoAccent}</span></span>
+          <button class="drawer__close" onClick={closeMenu} aria-label="Close menu">
+            <CloseIcon />
+          </button>
+        </div>
+        <nav class="drawer__nav">
+          <a href="#agents" class="drawer__link" onClick={closeMenu}>{t.navAgents}</a>
+          <a href="#formate" class="drawer__link" onClick={closeMenu}>{t.navFormats}</a>
+          <a href="#contact" class="drawer__link drawer__link--cta" onClick={closeMenu}>{t.bookSession}</a>
+        </nav>
+        <div class="drawer__footer">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
+      </aside>
 
       <main>
         <section class="hero">
@@ -305,7 +375,7 @@ export default function PageContent() {
         </section>
 
         {/* Use Cases Section */}
-        <section class="section">
+        <section id="agents" class="section">
           <div class="container">
             <div class="section-label">{t.useCasesLabel}</div>
             <h2 class="section-title">{t.useCasesTitle}</h2>
@@ -452,7 +522,7 @@ export default function PageContent() {
         </section>
 
         {/* Formats Section */}
-        <section class="section">
+        <section id="formate" class="section">
           <div class="container">
             <div class="section-label">{t.formatsLabel}</div>
             <h2 class="section-title">{t.formatsTitle}</h2>
@@ -475,19 +545,11 @@ export default function PageContent() {
               </div>
               <div class="format-card">
                 <div class="format-icon">
-                  <TeamIcon />
+                  <LayersIcon />
                 </div>
                 <h3>{t.format3Title}</h3>
                 <div class="format-price">{t.format3Price}</div>
                 <p>{t.format3Desc}</p>
-              </div>
-              <div class="format-card">
-                <div class="format-icon">
-                  <LayersIcon />
-                </div>
-                <h3>{t.format4Title}</h3>
-                <div class="format-price">{t.format4Price}</div>
-                <p>{t.format4Desc}</p>
               </div>
             </div>
           </div>
@@ -496,12 +558,33 @@ export default function PageContent() {
         {/* CTA Section */}
         <section id="contact" class="section cta-section">
           <div class="container">
-            <h2>{t.ctaTitle}</h2>
-            <p>{t.ctaSubtitle}</p>
-            <a href="mailto:vedran@unchained.shop?subject=Unchained%20Academy" class="hero__cta">
-              {t.ctaButton}
-              <ArrowIcon />
-            </a>
+            <div class="cta-content">
+              <div class="cta-badge">{t.ctaBadge}</div>
+              <h2>{t.ctaTitle}</h2>
+              <p class="cta-subtitle">{t.ctaSubtitle}</p>
+
+              <div class="cta-benefits">
+                <div class="cta-benefit">
+                  <CheckIcon />
+                  <span>{t.ctaBenefit1}</span>
+                </div>
+                <div class="cta-benefit">
+                  <CheckIcon />
+                  <span>{t.ctaBenefit2}</span>
+                </div>
+                <div class="cta-benefit">
+                  <CheckIcon />
+                  <span>{t.ctaBenefit3}</span>
+                </div>
+              </div>
+
+              <a href="mailto:vedran@unchained.shop?subject=Unchained%20Academy" class="cta-button">
+                <span>{t.ctaButton}</span>
+                <ArrowIcon />
+              </a>
+
+              <p class="cta-note">{t.ctaNote}</p>
+            </div>
           </div>
         </section>
       </main>

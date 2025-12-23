@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <header>
+    <header class="navbar">
         <div class="container header-inner">
             <div class="logo">vibe<span>code</span></div>
-            <button class="nav-cta">Book a Session</button>
+            <nav class="navbar__nav">
+                <a href="#agents" class="navbar__link">Agents</a>
+                <a href="#formate" class="navbar__link">Formate</a>
+                <a href="#cta" class="navbar__link navbar__link--cta">Session buchen</a>
+            </nav>
         </div>
     </header>
 
@@ -65,7 +69,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section id="agents" class="section">
             <div class="container">
                 <div class="section-label">What You'll Learn</div>
                 <h2 class="section-title">From zero to shipping in one session</h2>
@@ -94,7 +98,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section id="formate" class="section">
             <div class="container">
                 <div class="section-label">Formats</div>
                 <h2 class="section-title">Choose your path</h2>
@@ -151,7 +155,7 @@
             </div>
         </section>
 
-        <section class="section cta-section">
+        <section id="cta" class="section cta-section">
             <div class="container">
                 <h2>Ready to get started?</h2>
                 <p>Leave your email and I'll reach out within 24 hours to schedule your session.</p>
